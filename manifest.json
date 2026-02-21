@@ -1,0 +1,9 @@
+{
+"name":"ShapeAI PRO 2.0",
+"short_name":"ShapeAI",
+"start_url":"index.html",
+"display":"standalone",
+"background_color":"#0f172a",
+"theme_color":"#0ea5e9",
+"icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png"}]
+}
