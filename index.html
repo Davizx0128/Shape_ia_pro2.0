@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShapeAI PRO 2.0</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<meta name="theme-color" content="#0ea5e9">
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+</head>
+
+<body>
+
+<header>🔥 ShapeAI PRO 2.0</header>
+
+<nav>
+<button onclick="mostrar('dash')">Dashboard</button>
+<button onclick="mostrar('treinos')">Treinos</button>
+<button onclick="mostrar('receitas')">Receitas</button>
+<button onclick="mostrar('ia')">IA</button>
+<button onclick="mostrar('historico')">Histórico</button>
+<button onclick="mostrar('perfil')">Perfil</button>
+<button onclick="mostrar('loginSec')">Login / Register</button>
+</nav>
+
+<section id="loginSec">
+<h2>Login / Registro</h2>
+<input id="email" placeholder="Email">
+<input id="senha" type="password" placeholder="Senha">
+<button onclick="login()">Login</button>
+<button onclick="registrar()">Registrar</button>
+<p id="msgLogin"></p>
+</section>
+
+<section id="dash" class="ativo">
+<h2>Dashboard</h2>
+<p>Usuário: <span id="nomeUser">-</span></p>
+<p>Nível: <span id="nivelValor">1</span></p>
+<p>XP: <span id="xpValor">0</span></p>
+<p>Medalhas: <span id="medalhas">0</span></p>
+<div id="grafico"></div>
+</section>
+
+<section id="treinos">
+<h2>Exercícios</h2>
+<input id="buscaEx" placeholder="Buscar exercício...">
+<select id="filtroCat">
+<option value="">Todas categorias</option>
+<option>Peito</option>
+<option>Costas</option>
+<option>Pernas</option>
+<option>Ombros</option>
+<option>Bíceps</option>
+<option>Tríceps</option>
+<option>Abdômen</option>
+<option>Cardio</option>
+</select>
+<button onclick="filtrarExercicios()">Filtrar</button>
+<div id="listaTreinos"></div>
+<div id="paginacao"></div>
+<h3>Cronômetro</h3>
+<p id="tempo">00:00</p>
+<button onclick="iniciarTimer()">Iniciar</button>
+<button onclick="pararTimer()">Parar</button>
+</section>
+
+<section id="receitas">
+<h2>Receitas</h2>
+<div id="listaReceitas"></div>
+</section>
+
+<section id="ia">
+<h2>IA Nutricional</h2>
+<input id="comida" placeholder="Ex: arroz, frango">
+<button onclick="calcularComida()">Calcular</button>
+<p id="resultadoIA"></p>
+</section>
+
+<section id="historico">
+<h2>Histórico</h2>
+<div id="listaHistorico"></div>
+</section>
+
+<section id="perfil">
+<h2>Perfil</h2>
+<input id="nome" placeholder="Nome">
+<input id="peso" placeholder="Peso (kg)">
+<input id="altura" placeholder="Altura (cm)">
+<input id="idade" placeholder="Idade">
+<button onclick="salvarPerfil()">Salvar</button>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
